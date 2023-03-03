@@ -1,0 +1,57 @@
+Luc Hampsink            8980713
+Siebe Tolsma            9829261
+Tsjerk Piter Walinga    0962414
+
+
+1: The trigrams beat the bigrams everytime. The longer sentences resulted in better performance for both the bigrams en the trigrams. 
+So trigrams seem to be better for language detection (with limit of 200 and our dataset) and longer sentences improve the performance.
+
+results:    Bigram models for 10-word sentences: 18 correct, 12 incorrect
+            Trigram models for 10-word sentences: 22 correct, 8 incorrect
+            Bigram models for 30-word sentences: 27 correct, 3 incorrect
+            Trigram models for 30-word sentences: 29 correct, 1 incorrect
+            Bigram models for 90-word sentences: 29 correct, 1 incorrect
+            Trigram models for 90-word sentences: 30 correct, 0 incorrect
+
+2: 
+    200:
+    Bigram models for 10-word sentences: 18 correct, 12 incorrect
+    Trigram models for 10-word sentences: 22 correct, 8 incorrect
+    Bigram models for 30-word sentences: 27 correct, 3 incorrect
+    Trigram models for 30-word sentences: 29 correct, 1 incorrect
+    Bigram models for 90-word sentences: 29 correct, 1 incorrect
+    Trigram models for 90-word sentences: 30 correct, 0 incorrect
+    300:
+    Bigram models for 10-word sentences: 20 correct, 10 incorrect
+    Trigram models for 10-word sentences: 23 correct, 7 incorrect
+    Bigram models for 30-word sentences: 27 correct, 3 incorrect
+    Trigram models for 30-word sentences: 29 correct, 1 incorrect
+    Bigram models for 90-word sentences: 29 correct, 1 incorrect
+    Trigram models for 90-word sentences: 30 correct, 0 incorrect
+    400:
+    Bigram models for 10-word sentences: 20 correct, 10 incorrect
+    Trigram models for 10-word sentences: 23 correct, 7 incorrect
+    Bigram models for 30-word sentences: 27 correct, 3 incorrect
+    Trigram models for 30-word sentences: 29 correct, 1 incorrect
+    Bigram models for 90-word sentences: 29 correct, 1 incorrect
+    Trigram models for 90-word sentences: 30 correct, 0 incorrect
+
+for even higher numbers the performance stays the same, this is because the trainingdata only has a certain amount of bigrams and trigrams,
+as soon as these are exhausted adding a higher limit has no impact on performance. The trigrams still have a better performance and that won't
+change because of what we said previously.
+
+3: 
+results:    1-gram models for 30-word sentences: 19 correct, 11 incorrect
+            Bigram models for 30-word sentences: 27 correct, 3 incorrect
+            Trigram models for 30-word sentences: 29 correct, 1 incorrect
+            4-gram models for 30-word sentences: 28 correct, 2 incorrect
+            5-gram models for 30-word sentences: 24 correct, 6 incorrect
+            6-gram models for 30-word sentences: 17 correct, 13 incorrect
+
+for simplicity's sake we have kept the sentence size and limit the same for these tests, for our dataset trigrams gave the best results.
+closely followed by tetragrams and bigrams. Unigrams were way worse than bigrams and trigrams. The performance almost looks like a parabola
+with the optimum/vertex being the trigram.
+
+4: We were not really sure about how we should separate the tasks, but in the end everyone helped their fair share. We hit some roadblocks along
+the way (figuring out how relative paths worked and invisible unicode characters in the trainingdata messing with how we saved and read the data)
+but we managed to get it all working correctly in the end.
